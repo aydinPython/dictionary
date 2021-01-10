@@ -1,0 +1,17 @@
+{
+
+    "maşın":"car",
+    "ildırım":"thunderstorm",
+    "xatırlatmaq":"remind",
+    "tava":"pan",
+    "hava":"wheather",
+    "müqayisə":"comparison",
+    "şəxs":"person",
+    "ev":"home",
+    "şalvar":"trouser",
+    "dərs":"lesson",
+    "informasiya":"information",
+    "qorxulu":"scary",
+    "əlaqəli":"releated"
+
+}
