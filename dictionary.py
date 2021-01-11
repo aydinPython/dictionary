@@ -11,15 +11,30 @@ file.close()
 
 unKnownWords = {}
 powerOff = True
+newWord = []
+count = 0
 
 def randomWord(word):
-
+    
+    global count
+    
     while powerOff:
 
         words = random.choice(list(wordLists.keys()))
-        print(words)
-
         
+        if len(newWord) == len(wordLists):
+                print(f'End of Vocabulary...You learnt {count} words')
+                break
+                
+        if words not in newWord:
+            newWord.append(words)
+            count = count + 1
+            print(count,'.',words)
+            
+        else:
+            continue
+                
+            
         def dictionary(word):
             global powerOff
             global wordLists
