@@ -1,7 +1,7 @@
 import random
 import ast
 
-file = open('dictionary.txt','r')
+file = open('vocabluary.txt','r',encoding="utf8",errors='ignore')
 
 contents = file.read()
 wordLists = ast.literal_eval(contents)
@@ -21,18 +21,11 @@ def randomWord(word):
     while powerOff:
 
         words = random.choice(list(wordLists.keys()))
-        
-        if len(newWord) == len(wordLists):
-                print(f'End of Vocabulary...You learnt {count} words')
-                break
                 
         if words not in newWord:
-            newWord.append(words)
             count = count + 1
             print(count,'.',words)
             
-        else:
-            continue
                 
             
         def dictionary(word):
@@ -41,6 +34,8 @@ def randomWord(word):
             global unKnownWords
 
             inPut = input('> ')
+            
+           
 
             if inPut == 'exit':
                 powerOff = False
@@ -50,16 +45,20 @@ def randomWord(word):
                 pass
 
             else:
-                print('False')
+                print(wordLists[word])
                 print()
                 if wordLists[word] not in unKnownWords:
                     unKnownWords[words] = wordLists[word]
                     
             return unKnownWords
-
+        
         wrongWords = dictionary(words)
+        onlyKeys = wrongWords.values()
+             
 
-    return wrongWords
+    return onlyKeys
+
+
 
 print(30 * '= ')
 
@@ -69,6 +68,7 @@ print(30 * '= ')
 print()
 
 unknownWordList = randomWord(wordLists)
+converToListObj = list(unknownWordList)
 
 
-print(f'\nYou must review these words {unknownWordList}')
+print(f'\nYou must review these words {converToListObj}')
